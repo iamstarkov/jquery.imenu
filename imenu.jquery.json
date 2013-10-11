@@ -1,0 +1,29 @@
+{
+  "name": "imenu",
+  "title": "iMenu",
+  "description": "jquery.imenu — best adaptive menu ever",
+  "keywords": [
+    "responsive",
+    "adaptive",
+    "menu"
+  ],
+  "version": "0.1.0",
+  "author": {
+    "name": "Vladimir Starkov",
+    "email": "matmuchrapna@gmail.com",
+    "url": "http://vstarkov.com/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "bugs": "https://github.com/matmuchrapna/jquery.imenu/issues",
+  "homepage": "http://matmuchrapna.github.com/jquery.imenu/",
+  "docs": "https://github.com/matmuchrapna/jquery.imenu/blob/master/README.md",
+  "demo": "http://matmuchrapna.github.com/jquery.imenu/",
+  "dependencies": {
+    "jquery": "*"
+  }
+}
