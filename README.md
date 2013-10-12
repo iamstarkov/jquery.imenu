@@ -21,4 +21,18 @@ Include jQuery and `jquery.imenu.min.js` onto your page:
 ```
 
 
+## Options
+
+    breakpoint: 600,
+    debug: false,
+    toggler: '.imenu__toggler',
+    classes: {
+        modes: [ 'imenu_mode_mobile', 'imenu_mode_desktop' ],
+        states: [ 'imenu_mode_mobile-closed', 'imenu_mode_mobile-opened' ]
+    }
+
+
+## How does it work
+
+jquery.imenu find the elements with `.imenu` class and executes on thme
 
