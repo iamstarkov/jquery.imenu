@@ -137,6 +137,14 @@ Also you can redefine default options modifiyng fn.imenu.options object, like th
     }
 
 
+## Contributing
+
+* Fork it
+* Clone it
+* Checkout a release branch (`git checkout -b feature/cool-feature`)
+* Make changes, commit, and push
+* Open a pull request!
+
 ---
 
 With <3,  
