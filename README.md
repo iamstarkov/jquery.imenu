@@ -110,3 +110,29 @@ Also you can redefine default options modifiyng fn.imenu.options object, like th
     $.fn.imenu.options.breakpoint = 128;
     $.fn.imenu.options.debug = true;
 
+## CSS tips and recommendation
+
+    
+    /* Prevents flashing, before detecting the state */
+    .imenu,
+    .imenu__toggler {
+        display: none;
+    }
+
+    .imenu_state_mobile,
+    .imenu_state_desktop {
+        display: block;
+    }
+
+    /* Mobile state */
+    .imenu_state_mobile .imenu__toggler {
+        display: block;
+    }
+
+    /* Mobile substates */
+    .imenu_state_mobile-closed .imenu__list {
+        display: none;
+    }
+    .imenu_state_mobile-opened .imenu__list {
+        display: block;
+    }
