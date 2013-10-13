@@ -112,7 +112,6 @@ Also you can redefine default options modifiyng fn.imenu.options object, like th
 
 ## CSS tips and recommendation
 
-    
     /* Prevents flashing, before detecting the state */
     .imenu,
     .imenu__toggler {
@@ -136,3 +135,13 @@ Also you can redefine default options modifiyng fn.imenu.options object, like th
     .imenu_state_mobile-opened .imenu__list {
         display: block;
     }
+
+
+---
+
+With <3,  
+[@matmuchrapna](http://twitter.com/matmuchrapna)
+
+---
+
+[MIT Licensed](License.md)
