@@ -8,16 +8,22 @@
 
 $.fn.imenu = function ( custom_options ) {
 
+	function log(debug, message) {
+		if (debug) {
+			console.log(message);
+		}
+	}
+
 	function on_switch($elem, o, is_mobile) {
 		if (is_mobile) {
-			o.debug && console.log('desktop -> mobile');
+			log(o.debug, 'desktop -> mobile');
 			$elem.addClass(
-				$elem.data('imenu-state')
+				$elem.data('imenu-mobile-state')
 			);
 		} else {
-			o.debug && console.log('mobile -> desktop');
+			log(o.debug, 'mobile -> desktop');
 			$elem.data(
-				'imenu-state',
+				'imenu-mobile-state',
 				o.classes.mobile_states[
 					($elem.hasClass(o.classes.mobile_states[0])) ? 0 : 1
 				]
@@ -47,11 +53,13 @@ $.fn.imenu = function ( custom_options ) {
 		var $elem = $(this),
 			o = $.extend( {}, options, $elem.data('imenu') );
 
-		o.debug && console.log($elem, o);
+		log(o.debug, {element: $elem, options: o});
+		$elem.data('imenu-mobile-state', o.classes.mobile_states[0]);
 
 		$elem.data('is_mobile', $(window).width() < o.breakpoint );
-
+		
 		setting_states($elem, o);
+
 		$(window).resize(function() {
 			setting_states($elem, o);
 		});
