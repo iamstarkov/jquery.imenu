@@ -1,7 +1,7 @@
 jquery.imenu
 ============================================================
 
-jquery.imenu — best adaptive menu ever!
+jquery.imenu — best state manager for your adaptive menu!
 
 ## Features
 
@@ -16,8 +16,9 @@ jquery.imenu — best adaptive menu ever!
 The main idea behind *imenu* is `freedom`. Freedom is in enormous
 flexibility, based on *simplicity* of implementation and in idea of
 minimalism — jquery.imenu gives you excellent control to your menus,
-but not dictates how does it should like. (also imenu have some css
-tips and recommendations)
+but not dictates how does it should like (but imenu have some css
+tips and recommendations). Also jquery.imenu will track clicks on the
+toggler element to control `opened/closed` classes.
 
 ## Installation
 
@@ -25,6 +26,20 @@ Include jQuery and `jquery.imenu.min.js` onto your page:
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="jquery.imenu.min.js"></script>
+
+## How does it work
+
+### Easy way
+
+Add class `.imenu` to menu wrapper and `.imenu__toggler` to to toggler
+— thats all. jquery.imenu will find the elements with `.imenu` class
+and executes on them.
+
+### Normal way
+
+Add this string to your *scripts.js*, where `#menu` is selector to your menu:
+
+    $('#menu').imenu()
 
 ## Options
 
@@ -73,7 +88,25 @@ Default options are equal to this object:
     affect to desktop menu. *Current `mobile_state` class would be
     removed on switching to desktop and restored on switching back*
 
-## How does it work
+## Setting options
 
-jquery.imenu find the elements with `.imenu` class and executes on thme
+Options is an object you can pass it to jquery.menu constructor like this
+
+    $('#menu').imenu({
+        breakpoint: 480
+    });
+
+Or you can define custom options for each element:
+
+    <div id="menu" data-imenu='{
+            "breakpoint": 570,
+            "toggler": ".imenu__toggler"
+        }'>
+        <!-- Your menu with toggler -->
+    </div>
+
+Also you can redefine default options modifiyng fn.imenu.options object, like this:
+
+    $.fn.imenu.options.breakpoint = 128;
+    $.fn.imenu.options.debug = true;
 

@@ -1,13 +1,13 @@
 {
   "name": "imenu",
   "title": "iMenu",
-  "description": "jquery.imenu — best adaptive menu ever",
+  "description": "jquery.imenu — best state manager for your adaptive menu!",
   "keywords": [
     "responsive",
     "adaptive",
     "menu"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Vladimir Starkov",
     "email": "matmuchrapna@gmail.com",

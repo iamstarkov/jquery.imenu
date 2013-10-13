@@ -1,5 +1,5 @@
 /*
- * jquery.imenu — best adaptive menu ever
+ * jquery.imenu — best state manager for your adaptive menu!
  * Author: @matmuchrapna
  * Licensed under the MIT license
  */
@@ -18,16 +18,16 @@ $.fn.imenu = function ( custom_options ) {
 			o.debug && console.log('mobile -> desktop');
 			$elem.data(
 				'imenu-state',
-				o.classes.states[
-					($elem.hasClass(o.classes.states[0])) ? 0 : 1
+				o.classes.mobile_states[
+					($elem.hasClass(o.classes.mobile_states[0])) ? 0 : 1
 				]
 			);
-			$elem.removeClass( o.classes.states.join(' ') );
+			$elem.removeClass( o.classes.mobile_states.join(' ') );
 		}
 	}
 
-	function setting_modes($elem, o) {
-		$elem.removeClass(o.classes.modes.join(' '));
+	function setting_states($elem, o) {
+		$elem.removeClass(o.classes.states.join(' '));
 		
 		var is_mobile = $(window).width() < o.breakpoint;
 
@@ -37,7 +37,7 @@ $.fn.imenu = function ( custom_options ) {
 		$elem.data('is_mobile', is_mobile);
 
 
-		$elem.addClass(o.classes.modes[is_mobile ? 0 : 1]);
+		$elem.addClass(o.classes.states[is_mobile ? 0 : 1]);
 	}
 
 	options = $.extend( {}, $.fn.imenu.options, custom_options );
@@ -51,17 +51,17 @@ $.fn.imenu = function ( custom_options ) {
 
 		$elem.data('is_mobile', $(window).width() < o.breakpoint );
 
-		setting_modes($elem, o);
+		setting_states($elem, o);
 		$(window).resize(function() {
-			setting_modes($elem, o);
+			setting_states($elem, o);
 		});
 
 		if ($elem.data('is_mobile')) {
-			$elem.addClass(o.classes.states[0]);
+			$elem.addClass(o.classes.mobile_states[0]);
 		}
 		$(o.toggler).on('click', function (event) {
 			if ($elem.data('is_mobile')) {
-				$elem.toggleClass( o.classes.states.join(' ') );
+				$elem.toggleClass( o.classes.mobile_states.join(' ') );
 			}
 			event.preventDefault();
 		});
@@ -75,8 +75,8 @@ $.fn.imenu.options = {
 	debug: false,
 	toggler: '.imenu__toggler',
 	classes: {
-		modes: [ 'imenu_mode_mobile', 'imenu_mode_desktop' ],
-		states: [ 'imenu_mode_mobile-closed', 'imenu_mode_mobile-opened' ]
+		states: [ 'imenu_state_mobile', 'imenu_state_desktop' ],
+		mobile_states: [ 'imenu_state_mobile-closed', 'imenu_state_mobile-opened' ]
 	}
 };
 
