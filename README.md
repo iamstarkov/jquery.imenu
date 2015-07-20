@@ -148,26 +148,8 @@ Also you can redefine default options modifiyng fn.imenu.options object, like th
 ---
 
 With <3,  
-[@matmuchrapna](http://twitter.com/matmuchrapna)
+[@iamstarkov](http://twitter.com/iamstarkov)
 
 ---
 
 [MIT Licensed](License.md)
-
-
-
-![](https://secure.gaug.es/track.gif?h[site_id]=525ae9c5613f5d3bf2000176&h[resource]=https%3A%2F%2Fgithub.com%2Fmatmuchrapna%2Fjquery.imenu%2FREADME.md)
-
-<script type="text/javascript">
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.type  = 'text/javascript';
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '525ae9c5613f5d3bf2000176');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
